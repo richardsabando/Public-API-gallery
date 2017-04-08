@@ -18,7 +18,7 @@ $('#submit').click(function (evt) {
       $.each(data.albums.items,function(i,album) {
         console.log(data.albums.items);  
         spotifyHTML += '<li class="grid-25 tablet-grid-50 ">';
-        spotifyHTML += '<a href= "' + album.images[0].url + '" data-lightbox="image" data-title="' +  album.artists.name +'" >';
+        spotifyHTML += '<a href= "' + album.images[0].url + '" data-lightbox="image" data-title="' +  album.artists[0].name +'" >';
           
         spotifyHTML += '<img src="' + album.images[0].url + '"></a></li>';
       }); // end each
@@ -45,6 +45,12 @@ $('#submit').click(function (evt) {
         'resizeDuration': 200,
         'fitImagesInViewport': true,
         'wrapAround': true,
-        'disableScrolling': true
+        'disableScrolling': true,
+       
+        'albumLabel':  `Album-type: Album, 
+                        Derived from: Spotify, 
+                        Format: MP3 
+                                        `
+       
       });
 
